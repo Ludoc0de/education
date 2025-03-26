@@ -13,20 +13,20 @@
         <?php require_once(__DIR__ .'/header.php'); ?>
     </header>
     <section class="row mt-5">
-        <form class="" action="login.php" method="post">
-            <h1>Se connecter</h1>
+        <form class="col-6 offset-3" action="signup.php" method="post">
+            <h1>S'inscrire</h1>
             <div class="form-group">
                 <input class="form-control" type="text" name="email" placeholder="email">
             </div>
             <div class="form-group">
                 <input class="form-control" type="password" name="password" placeholder="mot de passe">
             </div>
-            <button type="submit" class="btn btn-dark button-login">Se connecter</button>
+            <button type="submit" class="button-login"> Enregistrer</button>
         </form>
         <div class="" id="">
             <ul class="">
                 <li class="nav-item">
-                    <a class="nav-link" href="signup.php">S'enregistrer</a>
+                    <a class="nav-link" href="login.php">Se connecter</a>
                 </li>
             </ul>
         </div>

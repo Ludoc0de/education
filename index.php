@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <title>Cyber Éducation</title>
 </head>
 
 <body>
-    <h1>Education</h1>
-    <a href="createMenber.php">Créer un compte</a>
-    <a href="login.php">Se connecter</a>
+    <header>
+        <!-- MENU -->
+        <?php require_once(__DIR__ .'/header.php'); ?>
+    </header>
+
+    <!-- BODY -->
+
+    <div id="corps">
+        <h1>Éducation</h1>
+
+        <p>
+            Bienvenue !<br />
+            Éducation cyber pour vos mioches.
+        </p>
+        <div class="" id="">
+            <ul class="">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="login.php">Se connecter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.php">S'enregistrer</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <?php require_once(__DIR__ .'/footer.php'); ?>
+
 </body>
 
 </html>
