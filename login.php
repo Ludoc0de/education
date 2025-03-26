@@ -8,9 +8,7 @@
 </head>
 
 <body>
-    <h1>Education</h1>
-    <a href="createMenber.php">Créer un compte</a>
-    <a href="login.php">Se connecter</a>
+    <h1>Se connecter</h1>
 </body>
 
 </html>
