@@ -12,13 +12,15 @@
         <!-- MENU -->
         <?php require_once(__DIR__ .'/header.php'); ?>
     </header>
-    <section class="row mt-5">
-        <form class="col-6 offset-3" action="signup.php" method="post">
+    <section class="">
+        <form class="" action="login.php" method="GET">
             <h1>S'inscrire</h1>
             <div class="form-group">
+                <label for="email">Email</label>
                 <input class="form-control" type="text" name="email" placeholder="email">
             </div>
             <div class="form-group">
+                <label for="password">mot de passe</label>
                 <input class="form-control" type="password" name="password" placeholder="mot de passe">
             </div>
             <button type="submit" class="button-login"> Enregistrer</button>
