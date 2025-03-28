@@ -1,3 +1,13 @@
+<?php
+$postData = $_POST;
+
+// 
+if (isset($postData["email"]) && isset($postData["password"])){
+    $successMessage("ok connecté");
+    return;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +23,20 @@
         <?php require_once(__DIR__ .'/header.php'); ?>
     </header>
     <section class="row mt-5">
-        <form class="" action="training.php" method="GET">
-            <h1>Se connecter</h1>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" type="text" name="email" placeholder="email">
-            </div>
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input class="form-control" type="password" name="password" placeholder="mot de passe">
-            </div>
-            <button type="submit" class="btn btn-dark button-login">Se connecter</button>
-        </form>
+        <?php if( $successMessage){
+            <form class="" action="training.php" method="GET">
+                <h1>Se connecter</h1>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="text" name="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input class="form-control" type="password" name="password" placeholder="mot de passe">
+                </div>
+                <button type="submit" class="btn btn-dark button-login">Se connecter</button>
+            </form>
+        }?>
         <div class="" id="">
             <ul class="">
                 <li class="nav-item">
