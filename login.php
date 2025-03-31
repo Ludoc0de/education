@@ -1,11 +1,28 @@
 <?php
 $postData = $_POST;
 
-$errorMessage=null;
-if (empty($postData["email"]) && empty($postData["password"])){
-    $errorMessage="identifiant ou mot de passe incorrect";
-    return;
+$loginMessage=null;
+if (
+    !isset($postData["email"]) 
+    || !isset($postData["password"])
+    || empty($postData["email"])
+    || !filter_var($postData["email"], FILTER_VALIDE_EMAIL)
+    || empty($postData["password"])
+    ){
+        $loginMessage="Merci de renseigner vos id";
+} else {
+    $loginMessage="Ok id";
 }
+
+// $loginMessage = null;
+
+// if (!empty($_POST['nickname']) && !empty($_POST['pass'])) {
+//     checkLogin($_POST['nickname'], $_POST['pass']);
+//     $loginMessage = "identifiant ou mot de passe incorrect";
+
+// } elseif (isset($_POST['nickname']) || isset($_POST['pass'])) {
+//     $loginMessage = "merci de renseigner tous les champs";
+// }
 
 ?>
 
@@ -37,10 +54,10 @@ if (empty($postData["email"]) && empty($postData["password"])){
             <button type="submit" class="btn btn-dark button-login">Se connecter</button>
         </form>
         <?php 
-        if($errorMessage){  
+        if($loginMessage){  
         ?>
         <p class="">
-            test <?php echo $errorMessage?>
+            test: <?php echo $loginMessage?>
         </p>
         <?php
         }
