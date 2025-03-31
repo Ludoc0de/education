@@ -1,11 +1,12 @@
 <?php
 $postData = $_POST;
 
-// 
-if (isset($postData["email"]) && isset($postData["password"])){
-    $successMessage("ok connecté");
+$errorMessage=null;
+if (empty($postData["email"]) && empty($postData["password"])){
+    $errorMessage="identifiant ou mot de passe incorrect";
     return;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -23,20 +24,28 @@ if (isset($postData["email"]) && isset($postData["password"])){
         <?php require_once(__DIR__ .'/header.php'); ?>
     </header>
     <section class="row mt-5">
-        <?php if( $successMessage){
-            <form class="" action="training.php" method="GET">
-                <h1>Se connecter</h1>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input class="form-control" type="text" name="email" placeholder="email">
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input class="form-control" type="password" name="password" placeholder="mot de passe">
-                </div>
-                <button type="submit" class="btn btn-dark button-login">Se connecter</button>
-            </form>
-        }?>
+        <form class="" action="" method="GET">
+            <h1>Se connecter</h1>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" name="email" placeholder="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input class="form-control" type="password" name="password" placeholder="mot de passe">
+            </div>
+            <button type="submit" class="btn btn-dark button-login">Se connecter</button>
+        </form>
+        <?php 
+        if($errorMessage){  
+        ?>
+        <p class="">
+            test <?php echo $errorMessage?>
+        </p>
+        <?php
+        }
+        ?>
+
         <div class="" id="">
             <ul class="">
                 <li class="nav-item">
