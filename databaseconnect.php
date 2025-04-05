@@ -1,5 +1,4 @@
 <?php
-
 try {
     // On se connecte à MySQL
     $mysqlClient = new PDO('mysql:host=' . MYSQL_HOST . ';dbname=' . MYSQL_NAME . ';charset=utf8',

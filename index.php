@@ -1,3 +1,8 @@
+<?php
+require_once(__DIR__ .'/variables.php'); 
+require_once(__DIR__ .'/functions.php'); 
+
+?>
 <!DOCTYPE html>
 <html>
 

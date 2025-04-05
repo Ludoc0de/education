@@ -2,25 +2,9 @@
 require_once(__DIR__ .'/config/mysql.php'); 
 require_once(__DIR__ .'/databaseconnect.php'); 
 require_once(__DIR__ .'/variables.php'); 
-
-foreach ($movies as $movie) {
-?>
-<h1><?php echo $movie['title']; ?></h1>
-<p><?php echo $movie['movie_link']; ?></p>
-<?php
-}
+require_once(__DIR__ .'/functions.php'); 
 
 
-// $postData = $_POST;
-// if (
-// !isset($postData["email"])
-// || !filter_var($postData["email"], FILTER_VALIDATE_EMAIL)
-// || empty($postData["password"])
-// || trim($postData["password"]) === ""
-// ){
-// echo("Merci de renseigner votre email et mot de passe");
-// return;
-// }
 ?>
 
 <!DOCTYPE html>
@@ -36,9 +20,14 @@ foreach ($movies as $movie) {
     <h1>Movie Training!</h1>
     <div class="">
         <div class="">
-            <h1><?php echo $movie['title']; ?></h1>
-            <h5 class="">Rappel de vos informations</h5>
-            <p class=""><b>Bienvenue</b> : <?php echo $_POST['email']; ?></p>
+            <h1>title</h1>
+            <?php foreach (getMovies($movies) as $movie) : ?>
+            <article>
+                <h3><?php echo $movie['title']; ?></h3>
+                <div><?php echo $movie['movie_link']; ?></div>
+                <i><?php echo displayAuthor($users); ?></i>
+            </article>
+            <?php endforeach ?>
         </div>
     </div>
 
